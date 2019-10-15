@@ -1,0 +1,56 @@
+<p>formulario-laboratorio en contrucción!</p>
+<!--Navigator-->
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <span>Formulario para solicitud de laboratorios Universidad Libre</span>
+      <span class="example-spacer"></span>
+      <mat-icon class="example-icon" aria-hidden="false" aria-label="Example heart icon">favorite</mat-icon>
+      <mat-icon class="example-icon" aria-hidden="false" aria-label="Example delete icon">delete</mat-icon>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<!--Calendario-->
+<div>
+    <ul>
+        <mat-form-field color="accent">
+            <mat-label>Fecha de solicitud</mat-label>
+            <input matInput [matDatepicker]="picker1">
+            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>
+            
+        <mat-form-field color="accent">
+            <mat-label>Fecha programada</mat-label>
+            <input matInput [matDatepicker]="picker2">
+            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2 color="primary"></mat-datepicker>
+        </mat-form-field>
+
+        <!--Input solicitud-->
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Numero solicitud" value="1234">
+        </mat-form-field>
+        
+        <!--Autocomplete laboratorios-->
+        <form class="example-form">
+        <mat-form-field class="example-full-width">
+            <input type="text" placeholder="Laboratorios" aria-label="Number" matInput [formControl]="myLaboratorio" [matAutocomplete]="auto">
+        </mat-form-field>
+        <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let laboratori of laborato" [value]="laboratori.name_laboratorio">
+            {{laboratori.name_laboratorio}}
+            </mat-option>
+        </mat-autocomplete>
+        <!--Autocomplete asignaturas-->
+        <mat-form-field class="example-full-width">
+          <input type="text" placeholder="Asignaturas" aria-label="Number" matInput [formControl]="myLaboratorio" [matAutocomplete]="auto">
+        </mat-form-field>
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option *ngFor="let asignatura of asignatura" [value]="asignatura.name_asignatura">
+            {{asignatura.name_asignatura}}
+          </mat-option>
+        </mat-autocomplete>
+        </form>
+        
+    </ul>
+</div>
