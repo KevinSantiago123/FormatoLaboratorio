@@ -1,13 +1,42 @@
 .example-spacer {
   flex: 1 1 auto;
   }
-
 .mat-form-field {
   margin-right : 15px ;
   width: 32%
  }
-
 .example-form {
-
   width: 152%;
+}
+.example-form1 {
+  width: 101%;
+}
+.example-full-width2{
+  width: 30%
+}
+.example-h2 {
+  margin: 10px;
+}
+.example-h3 {
+  margin: 10px;
+  font-family: "Times New Roman", Times, serif;
+  color: #5692DB;
+}
+
+.example-h4 {
+  margin: 0 120px;
+}
+
+.example-section {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  height: 60px;
+}
+.example-margin {
+  margin: 0 10px;
+}
+.example-full-width2 {
+  margin: 0 30px;
+  width: 5%;
 }

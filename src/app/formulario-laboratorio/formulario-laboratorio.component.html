@@ -30,7 +30,8 @@
         <mat-form-field class="example-full-width">
             <input matInput placeholder="Numero solicitud" value="1234">
         </mat-form-field>
-        
+    </ul>  
+    <ul>
         <!--Autocomplete laboratorios-->
         <form class="example-form">
         <mat-form-field class="example-full-width">
@@ -41,16 +42,134 @@
             {{laboratori.name_laboratorio}}
             </mat-option>
         </mat-autocomplete>
+      
         <!--Autocomplete asignaturas-->
         <mat-form-field class="example-full-width">
-          <input type="text" placeholder="Asignaturas" aria-label="Number" matInput [formControl]="myLaboratorio" [matAutocomplete]="auto">
+          <input type="text" placeholder="Asignaturas" aria-label="Number" matInput [formControl]="myAsignatura" [matAutocomplete]="auto">
         </mat-form-field>
         <mat-autocomplete #auto="matAutocomplete">
           <mat-option *ngFor="let asignatura of asignatura" [value]="asignatura.name_asignatura">
             {{asignatura.name_asignatura}}
           </mat-option>
         </mat-autocomplete>
-        </form>
-        
+        </form>      
     </ul>
+    <ul>
+        <!--Autocomplete docente-->
+        <form class="example-form1">
+          <mat-form-field class="example-full-width">
+              <input type="text" placeholder="Docentes" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
+          </mat-form-field>
+          <mat-autocomplete #auto="matAutocomplete">
+              <mat-option *ngFor="let docente of docentes" [value]="docente.name_docente">
+              {{Docente}}
+              </mat-option>
+          </mat-autocomplete>
+
+          <!--Input nombre practica-->
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Nombre practica" >
+          </mat-form-field>
+        
+          <!--Autocomplete facultad-->
+          <mat-form-field class="example-full-width">
+            <input type="text" placeholder="Asignaturas" aria-label="Number" matInput [formControl]="myAsignatura" [matAutocomplete]="auto">
+          </mat-form-field>
+          <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let asignatura of asignatura" [value]="asignatura.facultad">
+              {{Facultad}}
+            </mat-option>
+          </mat-autocomplete>
+          </form>   
+    </ul>
+    <ul>
+      <!--Check box varias preguntas-->
+      <section class="example-section">
+        <h3 class="example-h2">A.</h3><h5 class="example-h2">La solicitud tiene guia de laboratorio</h5>
+        <mat-checkbox class="example-margin" [(ngModel)]="checked">Si</mat-checkbox>
+        <mat-checkbox class="example-margin" [(ngModel)]="indeterminate">No</mat-checkbox>
+      </section> 
+      <section class="example-section">
+        <h3 class="example-h2">B.</h3><h5 class="example-h2">Requiere el uso del laboratorio</h5>
+        <mat-checkbox class="example-margin" [(ngModel)]="checked">Si</mat-checkbox>
+        <mat-checkbox class="example-margin" [(ngModel)]="indeterminate">No</mat-checkbox>
+      </section> 
+      <section class="example-section">
+        <h3 class="example-h2">C.</h3><h5 class="example-h2">Requiere la asistencia del auxiliar de laboratorio</h5>
+        <mat-checkbox class="example-margin" [(ngModel)]="checked">Si</mat-checkbox>
+        <mat-checkbox class="example-margin" [(ngModel)]="indeterminate">No</mat-checkbox>
+        </section>
+      <section class="example-section">
+        <h3 class="example-h2">D.</h3><h5 class="example-h2">Utiliza maquinas, equipo o herramientas</h5>
+        <mat-checkbox class="example-margin" [(ngModel)]="checked">Si</mat-checkbox>
+        <mat-checkbox class="example-margin" [(ngModel)]="indeterminate">No</mat-checkbox>
+        <mat-form-field class="example-full-width1">
+          <textarea matInput placeholder="Cantidad - descripcion"></textarea>
+        </mat-form-field>
+      </section>
+      <section class="example-section">
+        <h3 class="example-h2">E.</h3><h5 class="example-h2">Utiliza material de consumo</h5>
+        <mat-checkbox class="example-margin" [(ngModel)]="checked">Si</mat-checkbox>
+        <mat-checkbox class="example-margin" [(ngModel)]="indeterminate">No</mat-checkbox>
+        <mat-form-field class="example-full-width1">
+          <textarea matInput placeholder="Cantidad - descripcion"></textarea>
+        </mat-form-field>
+      </section>
+      <!--Input   numero estudiantes en la practica-->
+      <section class="example-section">    
+        <h3 class="example-h2">F.</h3><h5 class="example-h2">Cantidad de estudiantes en la practica</h5>   
+        <mat-form-field class="example-full-width2">
+          <input matInput placeholder="numero" >
+        </mat-form-field>
+      </section>           
+    </ul>
+    <ul>
+      <section class="example-section">
+        <mat-form-field class="example-full-width1">
+          <input matInput placeholder="Entrega" >
+        </mat-form-field>  
+        <mat-form-field class="example-full-width1">
+          <textarea matInput placeholder="Recibe"></textarea>
+        </mat-form-field>
+      </section>
+    </ul>     
+    <ul>
+        <h5 class="example-h3">Cargo: Auxiliar de laboratorio</h5> 
+        <mat-form-field class="example-full-width1">
+            <textarea matInput placeholder="Observaciones"></textarea>
+          </mat-form-field>
+        <section class="example-section">
+          <h5 class="example-h2">Material pendiente de reponer</h5>
+          <mat-checkbox class="example-margin" [(ngModel)]="checked">Si</mat-checkbox>
+          <mat-checkbox class="example-margin" [(ngModel)]="indeterminate">No</mat-checkbox>
+        </section> 
+
+        <!--Input hora entrada-->
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Hora entrada" >
+        </mat-form-field>
+        <!--Input hora salida-->
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Hora salida" >
+        </mat-form-field>
+    </ul>
+    <ul>
+      <!--Input firma docente-->
+      
+      <mat-form-field class="example-full-width">
+          <input matInput placeholder="" >
+        </mat-form-field>       
+        <!--Input firma docente2-->
+        <mat-form-field class="example-full-width" >
+          <input matInput placeholder="" >
+        </mat-form-field>
+        <section class="example-section">
+        <h5 class="example-h4">Firma docente</h5>
+        <h5 class="example-h4">Firma docente</h5>
+      </section>
+
+    </ul>
+    
+    
+    
 </div>
