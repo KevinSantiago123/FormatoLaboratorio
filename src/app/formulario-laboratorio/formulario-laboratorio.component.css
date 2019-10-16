@@ -22,11 +22,9 @@
   font-family: "Times New Roman", Times, serif;
   color: #5692DB;
 }
-
 .example-h4 {
   margin: 0 120px;
 }
-
 .example-section {
   display: flex;
   align-content: center;
@@ -39,4 +37,16 @@
 .example-full-width2 {
   margin: 0 30px;
   width: 5%;
+}
+.box1{
+  margin: 200px; 
+   width: 200px;
+}
+.box2{
+  margin: 235px; 
+   width: 200px;
+}
+.box3{
+  margin: 131px; 
+   width: 200px;
 }

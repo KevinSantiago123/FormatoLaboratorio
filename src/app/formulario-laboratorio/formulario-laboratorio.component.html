@@ -45,9 +45,10 @@
       
         <!--Autocomplete asignaturas-->
         <mat-form-field class="example-full-width">
-          <input type="text" placeholder="Asignaturas" aria-label="Number" matInput [formControl]="myAsignatura" [matAutocomplete]="auto">
+          <input type="text" placeholder="Asignaturas" aria-label="Number" matInput [formControl]="myAsignatura" [matAutocomplete]="auto1">
+          <!-- {{asignatura | json}}   -->
         </mat-form-field>
-        <mat-autocomplete #auto="matAutocomplete">
+        <mat-autocomplete #auto1="matAutocomplete">
           <mat-option *ngFor="let asignatura of asignatura" [value]="asignatura.name_asignatura">
             {{asignatura.name_asignatura}}
           </mat-option>
@@ -58,9 +59,9 @@
         <!--Autocomplete docente-->
         <form class="example-form1">
           <mat-form-field class="example-full-width">
-              <input type="text" placeholder="Docentes" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
+              <input type="text" placeholder="Docentes" aria-label="Number" matInput [formControl]="myDocente" [matAutocomplete]="auto2">
           </mat-form-field>
-          <mat-autocomplete #auto="matAutocomplete">
+          <mat-autocomplete #auto2="matAutocomplete">
               <mat-option *ngFor="let docente of docentes" [value]="docente.name_docente">
               {{Docente}}
               </mat-option>
@@ -73,11 +74,11 @@
         
           <!--Autocomplete facultad-->
           <mat-form-field class="example-full-width">
-            <input type="text" placeholder="Asignaturas" aria-label="Number" matInput [formControl]="myAsignatura" [matAutocomplete]="auto">
+            <input type="text" placeholder="Facultad" aria-label="Number" matInput [formControl]="myAsignatura" [matAutocomplete]="auto4">
           </mat-form-field>
-          <mat-autocomplete #auto="matAutocomplete">
+          <mat-autocomplete #auto4="matAutocomplete">
             <mat-option *ngFor="let asignatura of asignatura" [value]="asignatura.facultad">
-              {{Facultad}}
+              {{asignatura.facultad}}
             </mat-option>
           </mat-autocomplete>
           </form>   
@@ -85,32 +86,36 @@
     <ul>
       <!--Check box varias preguntas-->
       <section class="example-section">
+        
         <h3 class="example-h2">A.</h3><h5 class="example-h2">La solicitud tiene guia de laboratorio</h5>
+        <div class = "box1">
         <mat-checkbox class="example-margin" [(ngModel)]="checked">Si</mat-checkbox>
-        <mat-checkbox class="example-margin" [(ngModel)]="indeterminate">No</mat-checkbox>
+        <mat-checkbox class="example-margin" [(ngModel)]="indeterminate">No</mat-checkbox></div>
       </section> 
       <section class="example-section">
         <h3 class="example-h2">B.</h3><h5 class="example-h2">Requiere el uso del laboratorio</h5>
-        <mat-checkbox class="example-margin" [(ngModel)]="checked">Si</mat-checkbox>
-        <mat-checkbox class="example-margin" [(ngModel)]="indeterminate">No</mat-checkbox>
+        <div class = "box2">
+        <mat-checkbox class="example-margin" [(ngModel)]="checked1">Si</mat-checkbox>
+        <mat-checkbox class="example-margin" [(ngModel)]="indeterminate1">No</mat-checkbox></div>
       </section> 
       <section class="example-section">
         <h3 class="example-h2">C.</h3><h5 class="example-h2">Requiere la asistencia del auxiliar de laboratorio</h5>
-        <mat-checkbox class="example-margin" [(ngModel)]="checked">Si</mat-checkbox>
-        <mat-checkbox class="example-margin" [(ngModel)]="indeterminate">No</mat-checkbox>
+        <div class = "box3">
+        <mat-checkbox class="example-margin" [(ngModel)]="checked2">Si</mat-checkbox>
+        <mat-checkbox class="example-margin" [(ngModel)]="indeterminate2">No</mat-checkbox></div>
         </section>
       <section class="example-section">
         <h3 class="example-h2">D.</h3><h5 class="example-h2">Utiliza maquinas, equipo o herramientas</h5>
-        <mat-checkbox class="example-margin" [(ngModel)]="checked">Si</mat-checkbox>
-        <mat-checkbox class="example-margin" [(ngModel)]="indeterminate">No</mat-checkbox>
+        <mat-checkbox class="example-margin" [(ngModel)]="checked3">Si</mat-checkbox>
+        <mat-checkbox class="example-margin" [(ngModel)]="indeterminate3">No</mat-checkbox>
         <mat-form-field class="example-full-width1">
           <textarea matInput placeholder="Cantidad - descripcion"></textarea>
         </mat-form-field>
       </section>
       <section class="example-section">
         <h3 class="example-h2">E.</h3><h5 class="example-h2">Utiliza material de consumo</h5>
-        <mat-checkbox class="example-margin" [(ngModel)]="checked">Si</mat-checkbox>
-        <mat-checkbox class="example-margin" [(ngModel)]="indeterminate">No</mat-checkbox>
+        <mat-checkbox class="example-margin" [(ngModel)]="checked4">Si</mat-checkbox>
+        <mat-checkbox class="example-margin" [(ngModel)]="indeterminate4">No</mat-checkbox>
         <mat-form-field class="example-full-width1">
           <textarea matInput placeholder="Cantidad - descripcion"></textarea>
         </mat-form-field>
@@ -140,8 +145,8 @@
           </mat-form-field>
         <section class="example-section">
           <h5 class="example-h2">Material pendiente de reponer</h5>
-          <mat-checkbox class="example-margin" [(ngModel)]="checked">Si</mat-checkbox>
-          <mat-checkbox class="example-margin" [(ngModel)]="indeterminate">No</mat-checkbox>
+          <mat-checkbox class="example-margin" [(ngModel)]="checked5">Si</mat-checkbox>
+          <mat-checkbox class="example-margin" [(ngModel)]="indeterminate5">No</mat-checkbox>
         </section> 
 
         <!--Input hora entrada-->
