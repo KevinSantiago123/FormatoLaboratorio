@@ -1,52 +1,82 @@
+.container {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: auto;
+}
+
+.form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .example-spacer {
-  flex: 1 1 auto;
-  }
+    flex: 1 1 auto;
+}
+
 .mat-form-field {
-  margin-right : 15px ;
-  width: 32%
- }
+    margin-right: 15px;
+    width: 32%
+}
+
 .example-form {
-  width: 152%;
+    width: 152%;
 }
+
 .example-form1 {
-  width: 101%;
+    width: 101%;
 }
-.example-full-width2{
-  width: 30%
-}
-.example-h2 {
-  margin: 10px;
-}
-.example-h3 {
-  margin: 10px;
-  font-family: "Times New Roman", Times, serif;
-  color: #5692DB;
-}
-.example-h4 {
-  margin: 0 120px;
-}
-.example-section {
-  display: flex;
-  align-content: center;
-  align-items: center;
-  height: 60px;
-}
-.example-margin {
-  margin: 0 10px;
-}
+
 .example-full-width2 {
-  margin: 0 30px;
-  width: 5%;
+    width: 30%
 }
-.box1{
-  margin: 200px; 
-   width: 200px;
+
+.example-h2 {
+    margin: 10px;
 }
-.box2{
-  margin: 235px; 
-   width: 200px;
+
+.example-h3 {
+    margin: 10px;
+    font-family: "Times New Roman", Times, serif;
+    color: #5692DB;
 }
-.box3{
-  margin: 131px; 
-   width: 200px;
+
+.example-h4 {
+    margin: 0 120px;
+}
+
+.example-section {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    height: 60px;
+}
+
+.example-margin {
+    margin: 0 10px;
+}
+
+.example-full-width2 {
+    margin: 0 30px;
+    width: 5%;
+}
+
+.box1 {
+    margin: 200px;
+    width: 200px;
+}
+
+.box2 {
+    margin: 235px;
+    width: 200px;
+}
+
+.box3 {
+    margin: 131px;
+    width: 200px;
 }

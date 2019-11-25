@@ -1,0 +1,39 @@
+<!-- <p>registro works!</p> -->
+<div class="container">
+    <div class="titulo">
+        <h2>Diligencia los siguientes campos:</h2>
+    </div>
+    <mat-card>
+        <form class="form" [formGroup]="form" (ngSubmit)="InsertRegister()">
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Número de cedula" formControlName="identificationNumber">
+                <mat-error *ngIf="form.get('identificationNumber').hasError('required')">
+                    Los campos son requeridos
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Nombres y apellidos" formControlName="names">
+                <mat-error *ngIf="form.get('names').hasError('names')">
+                    El campo es requerido
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Nombre usuario" formControlName="username">
+                <!-- <mat-hint>Errors appear instantly!</mat-hint> -->
+                <mat-error *ngIf="form.get('username').hasError('username')">
+                    El campo es requerido
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Contraseña" type="password" formControlName="password">
+                <!-- <mat-hint>Errors appear instantly!</mat-hint> -->
+                <mat-error *ngIf="form.get('password').hasError('password')">
+                    El campo es requerido
+                </mat-error>
+            </mat-form-field>
+            <div class="btn">
+                <button mat-raised-button color="primary" type="submit">Registrarse</button>
+            </div>
+        </form>
+    </mat-card>
+</div>

@@ -12,6 +12,8 @@ import { MatNativeDateModule } from '@angular/material/core';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatSelectModule} from '@angular/material/select';
 import {MatSliderModule} from '@angular/material/slider';
+import {MatCardModule} from '@angular/material/card';
+
 
 @NgModule({
   imports: [MatButtonModule,
@@ -26,7 +28,8 @@ import {MatSliderModule} from '@angular/material/slider';
            MatNativeDateModule,
            MatRadioModule,
            MatSelectModule,
-           MatSliderModule ],
+           MatSliderModule,
+           MatCardModule],
   exports: [MatButtonModule, 
             MatCheckboxModule,
             MatAutocompleteModule,
@@ -39,7 +42,8 @@ import {MatSliderModule} from '@angular/material/slider';
             MatNativeDateModule,
             MatRadioModule,
             MatSelectModule,
-            MatSliderModule ],
+            MatSliderModule,
+            MatCardModule],
   providers: [
     MatDatepickerModule
   ]

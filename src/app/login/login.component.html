@@ -1,0 +1,30 @@
+<!-- <p>login works!</p> -->
+<div class="container">
+    <div class="titulo"><h1 >Laboratorios U. Libre</h1></div>
+    <mat-card>
+        <form class="form" [formGroup]="form" (ngSubmit)="Login()">
+            <div class="img_container"><img class="logo" width="100" alt="Universidad Libre"
+                    src="assets/img/Escudo_ULibre.png"></div>
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Usuario" formControlName="username">
+                <mat-error *ngIf="form.get('username').hasError('required')">
+                    El campo es requerido
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Contraseña" type="password" formControlName="password">
+                <!-- <mat-hint>Errors appear instantly!</mat-hint> -->
+                <mat-error *ngIf="form.get('password').hasError('required')">
+                    El campo es requerido
+                </mat-error>
+                <mat-error *ngIf="form.get('password').hasError('minlength')">
+                    El mínimo de la contraseña es de 5 caracteres
+                </mat-error>
+            </mat-form-field>
+            <div class="btn">
+                <button mat-raised-button color="primary" type="button" (click)="Registrarse()">Registrate aquí</button>
+                <button mat-raised-button color="primary" type="submit">Ingresar</button>
+            </div>
+        </form>
+    </mat-card>
+</div>

@@ -1,8 +1,11 @@
-import { Component } from '@angular/core';
-import {FormControl} from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
-import { Asignaturas, Laboratorios } from '../dto/structure_class';
-import { FormularioLaboratoriosService,FormularioAsignaturasService} from '../service/formulario-laboratorio.service';
+import { Asignaturas, Laboratorios, Docentes, Facultades } from '../dto/structure_class';
+import { AsignaturasService } from '../service/asignaturas.service';
+import { LaboratoriosService } from '../service/laboratorios.service';
+import { DocentesService } from '../service/docentes.service';
+import { FacultadesService } from '../service/facultades.service';
 
 @Component({
   selector: 'app-formulario-laboratorio',
@@ -10,14 +13,16 @@ import { FormularioLaboratoriosService,FormularioAsignaturasService} from '../se
   styleUrls: ['./formulario-laboratorio.component.css']
 })
 
-export class FormularioLaboratorioComponent {
+export class FormularioLaboratorioComponent implements OnInit {
   myLaboratorio = new FormControl();
   myAsignatura = new FormControl();
   myControl = new FormControl();
   asignatura: Asignaturas[];
   laborato: Laboratorios[];
+  docente:Docentes[];
+  facultad:Facultades[];
 
-  /*Variables checkbox*/ 
+  /*Variables checkbox*/
   checked = false;
   indeterminate = false;
   labelPosition = 'after';
@@ -48,11 +53,59 @@ export class FormularioLaboratorioComponent {
   labelPosition5 = 'after';
   disabled5 = false;
 
-  constructor( 
-    private listadoLabService: FormularioLaboratoriosService, private listadoAsigService:FormularioAsignaturasService
-    ) { 
-    this.laborato = this.listadoLabService.getLaboratorios();
-    this.asignatura = this.listadoAsigService.getAsignaturas();
+  constructor(
+    private listadoLabService: LaboratoriosService, private listadoAsigService: AsignaturasService,
+    private listadoDocentes:DocentesService, private listadoFacultades:FacultadesService
+  ) { }
 
-    }
+  ngOnInit() {
+    this.ListarAsignaturas()
+    this.ListarLaboratorio()
+    this.ListarDocentes()
+    this.ListarFacultades()
+  }
+
+  ListarAsignaturas() {
+    this.listadoAsigService.Asignatura().subscribe(
+      (res) => {
+        this.asignatura = res
+      },
+      (error) => {
+        console.log(<any>error);
+      }
+    )
+  }
+
+  ListarLaboratorio() {
+    this.listadoLabService.Laboratorios().subscribe(
+      (res) => {
+        this.laborato = res
+      },
+      (error) => {
+        console.log(<any>error);
+      }
+    )
+  }
+
+  ListarDocentes() {
+    this.listadoDocentes.Docentes().subscribe(
+      (res) => {
+        this.docente = res
+      },
+      (error) => {
+        console.log(<any>error);
+      }
+    )
+  }
+
+  ListarFacultades() {
+    this.listadoFacultades.Facultad().subscribe(
+      (res) => {
+        this.facultad = res
+      },
+      (error) => {
+        console.log(<any>error);
+      }
+    )
+  }
 }
