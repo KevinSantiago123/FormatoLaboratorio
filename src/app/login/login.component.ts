@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
       (res) => {
         console.log(res['message']);
         if(res['message'] == 'usuario inicia sesión correctamente'){
-          sessionStorage.setItem('user', "1");
+          sessionStorage.setItem('user', res['rol'].toString());
           this.router.navigate(['/opciones']);
         }
         else{

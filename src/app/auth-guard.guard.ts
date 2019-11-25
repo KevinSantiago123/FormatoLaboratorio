@@ -11,7 +11,7 @@ export class AuthGuardGuard implements CanActivate, CanActivateChild, CanLoad {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
       let user = JSON.parse(sessionStorage.getItem('user'));
-      if( user == 1){
+      if( user == 1 || user ==2 || user ==3){
         return true
       }
       this.router.navigate(['/login']);

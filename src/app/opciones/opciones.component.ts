@@ -9,10 +9,15 @@ import { ContenidoOpciones } from '../dto/structure_class';
 })
 export class OpcionesComponent implements OnInit {
   options: ContenidoOpciones[];
+  // let user = JSON.parse(sessionStorage.getItem('user'));
 
   constructor(
-    private listaOpcionesService: OpcionesService) { 
-    this.options = this.listaOpcionesService.getOpciones();
+    private listaOpcionesService: OpcionesService ) {
+    if (sessionStorage.getItem('user') == "1") {
+      this.options = this.listaOpcionesService.getOpciones();
+    } else{
+      this.options = this.listaOpcionesService.getOpciones2();
+    }
   }
   ngOnInit() {
   }
