@@ -12,7 +12,7 @@ import { User } from '../dto/structure_class';
 
 export class RegistroComponent  {
   form: FormGroup
-  rol=1;
+  rol=2;
   constructor(private fb: FormBuilder, private register: RegistroService, private router: Router) {
     
     this.form = fb.group({
@@ -35,7 +35,7 @@ export class RegistroComponent  {
         (res) => {
           alert(res['message'])
           console.log(res['message']);
-          sessionStorage.setItem('user', "1");
+          sessionStorage.setItem('user', "2");
           this.router.navigate(['/opciones']);
         },
         (error) => {

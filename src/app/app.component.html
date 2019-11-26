@@ -20,7 +20,18 @@
 
 <router-outlet></router-outlet>
 -->
-<div>
+<div class="general">
+    <!--Navigator-->
+    <mat-toolbar color="primary" class="barra">
+        <mat-toolbar-row>
+            <span>Laboratorios Universidad Libre</span>
+            <span class="example-spacer"></span>
+            <!-- <mat-icon class="example-icon" aria-hidden="false" aria-label="Example delete icon" type="submit">power</mat-icon> -->
+            <div class="bt" *ngIf="router.url != '/login' && router.url != '/registro'">
+                <button mat-raised-button color="primary" type="button" (click)="CerrarSesion()" aria-hidden="false" class="example-icon">Cerrar sesión</button>
+            </div>
+        </mat-toolbar-row>
+    </mat-toolbar>
     <router-outlet>
     </router-outlet>
 </div>

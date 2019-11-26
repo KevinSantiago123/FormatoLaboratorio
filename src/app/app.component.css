@@ -1,5 +1,22 @@
-div {
+.general {
     width: 100%;
     height: 100%;
     overflow: auto;
+}
+
+.barra {
+    position: static;
+    background: rgb(196, 66, 66);
+}
+
+.example-icon {
+    padding: 0 14px;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+mat-toolbar-row {
+    justify-content: space-between;
 }

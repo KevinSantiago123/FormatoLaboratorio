@@ -6,16 +6,23 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthGuardGuard implements CanActivate, CanActivateChild, CanLoad {
-  constructor(private router: Router){}
+  user1 = ["opciones", "facultades", "bloques", "laboratorios", "docentes", "asignaturas", "listarusuarios", "listarsolicitudes"]
+  user2 = ["opciones", "listarsolicitudes", "formulario"]
+  constructor(private router: Router) { }
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      let user = JSON.parse(sessionStorage.getItem('user'));
-      if( user == 1 || user ==2 || user ==3){
-        return true
-      }
+    let user = JSON.parse(sessionStorage.getItem('user'));
+    if (user == 2 && this.user2.indexOf(next.url.join()) != -1) {
+      return true
+    } else if (user == 1 && this.user1.indexOf(next.url.join()) != -1) {
+      return true
+    } else {
       this.router.navigate(['/login']);
       return false
+    }
+
+    // console.log(next.url.join().includes("listarsolicitudes"))
   }
   canActivateChild(
     next: ActivatedRouteSnapshot,

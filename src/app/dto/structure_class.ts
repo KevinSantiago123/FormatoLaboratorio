@@ -71,3 +71,31 @@ export class Docentes {
         public name?: string
     ) { }
 }
+
+export class Solicitud {
+    constructor(
+        
+        public fechaSolicitud?: Date,
+        public fechaProgramada?: Date,
+        public laboratorio?: string,
+        public asignatura?: string,
+        public docente?: string,
+        public nombrePractica?: string,
+        public facultad?: string,
+        public bloque?: string,
+        public id?: number,
+        public guia?: boolean,
+        public usoLaboratorio?: boolean,
+        public asisAuxiliar?: boolean,
+        public maquinas?: boolean,
+        public material?: boolean,
+        public cantEstudiantes?: number,
+        public docEntrega?: string,
+        public recibe?: string,
+        public observaciones?: string,
+        public matPendiente?: boolean,
+        public horaEntrada?: Date,
+        public horaSalida?: Date
+    ) { }
+
+}

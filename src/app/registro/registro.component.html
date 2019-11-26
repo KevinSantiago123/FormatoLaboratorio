@@ -8,26 +8,26 @@
             <mat-form-field class="full-width">
                 <input matInput placeholder="Número de cedula" formControlName="identificationNumber">
                 <mat-error *ngIf="form.get('identificationNumber').hasError('required')">
-                    Los campos son requeridos
+                    El campo es requerido
                 </mat-error>
             </mat-form-field>
             <mat-form-field class="full-width">
                 <input matInput placeholder="Nombres y apellidos" formControlName="names">
-                <mat-error *ngIf="form.get('names').hasError('names')">
+                <mat-error *ngIf="form.get('names').hasError('required')">
                     El campo es requerido
                 </mat-error>
             </mat-form-field>
             <mat-form-field class="full-width">
                 <input matInput placeholder="Nombre usuario" formControlName="username">
                 <!-- <mat-hint>Errors appear instantly!</mat-hint> -->
-                <mat-error *ngIf="form.get('username').hasError('username')">
+                <mat-error *ngIf="form.get('username').hasError('required')">
                     El campo es requerido
                 </mat-error>
             </mat-form-field>
             <mat-form-field class="full-width">
                 <input matInput placeholder="Contraseña" type="password" formControlName="password">
                 <!-- <mat-hint>Errors appear instantly!</mat-hint> -->
-                <mat-error *ngIf="form.get('password').hasError('password')">
+                <mat-error *ngIf="form.get('password').hasError('required')">
                     El campo es requerido
                 </mat-error>
             </mat-form-field>

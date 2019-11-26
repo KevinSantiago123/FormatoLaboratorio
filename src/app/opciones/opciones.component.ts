@@ -12,13 +12,12 @@ export class OpcionesComponent implements OnInit {
   // let user = JSON.parse(sessionStorage.getItem('user'));
 
   constructor(
-    private listaOpcionesService: OpcionesService ) {
+    private listaOpcionesService: OpcionesService ) {  }
+  ngOnInit() {
     if (sessionStorage.getItem('user') == "1") {
       this.options = this.listaOpcionesService.getOpciones();
     } else{
       this.options = this.listaOpcionesService.getOpciones2();
     }
-  }
-  ngOnInit() {
   }
 }

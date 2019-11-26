@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Bloques } from '../dto/structure_class';
 import { BloquesService } from '../service/bloques.service';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-bloques',
@@ -11,8 +12,13 @@ export class BloquesComponent implements OnInit {
   displayedColumns: string[] = ['id', 'name'];
   bloque: Bloques[];
 
-  constructor(private listaBloquesService: BloquesService) {
+  form: FormGroup
+  constructor(private listaBloquesService: BloquesService, private fb: FormBuilder) {
+    this.form = fb.group({
+      name: [null, Validators.compose([Validators.required])]
+    })
   }
+
   ngOnInit() {
     this.ListarBloques()
   }
@@ -25,5 +31,23 @@ export class BloquesComponent implements OnInit {
         console.log(<any>error);
       }
     )
+  }
+
+  InsertarBloque() {
+    let newBloque = new Bloques(
+      undefined,
+      this.form.value.name
+      )
+    this.listaBloquesService.BloquesCrear(newBloque).subscribe(
+        (res) => {
+          this.ListarBloques()
+          alert(res['message'])
+          console.log(res['message']);
+        },
+        (error) => {
+          alert(error.error.message)
+          console.log(error.error.message);
+        }
+      )
   }
 }
